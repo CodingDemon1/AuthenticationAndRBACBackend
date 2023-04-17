@@ -1,0 +1,1 @@
+db.users.aggregate([{$lookup:{from:"transactions", localField:"_id",foreignField:"user_id",as:"Users_Transactions"}},{$unwind:"$Users_Transactions"}])
